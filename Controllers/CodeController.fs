@@ -4,6 +4,9 @@ open System
 open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Logging
 open lerve.Services.LispService
+open lerve.Services.LispService.Lexer
+open lerve.Services.LispService.Parser
+open lerve.Services.CommonService.Result
 open lerve.Models
 
 [<ApiController>]
@@ -17,7 +20,7 @@ type CodeController (logger : ILogger<CodeController>) =
     [<HttpPost>]
     member _.Post(req: CodeRequestModel) =
         if req.isValid then
-            match lexer req.source with
+            match lexer req.source <*> parser with
             | Ok(tokens) -> ActionResult<BaseModel<Token>>(base.Ok(Success tokens))
             | Error(err) -> ActionResult<BaseModel<Token>>(base.BadRequest(Failure {ErrorRecord.Message = err; ErrorRecord.Source = base.Url.PageLink()}))
         else

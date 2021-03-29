@@ -7,7 +7,11 @@
     <ItemGroup>
         <Compile Include="Models\BaseResponseModel.fs" />
         <Compile Include="Models\CodeRequestModel.fs" />
+        <Compile Include="Services\CommonService\Tuple.fs" />
+        <Compile Include="Services\CommonService\List.fs" />
+        <Compile Include="Services\CommonService\Result.fs" />
         <Compile Include="Services\LispService\Lexer.fs" />
+        <Compile Include="Services\LispService\Parser.fs" />
         <Compile Include="Controllers\CodeController.fs" />
         <Compile Include="Startup.fs" />
         <Compile Include="Program.fs" />
