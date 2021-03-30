@@ -22,7 +22,7 @@ module Lexer =
                 let isNewLine c =
                     c = '\n'
 
-                collectComment' <| List.partition isNewLine s
+                collectComment' <| splitOn isNewLine s
 
             let collectStringLiteral (s: Char list): Token list =
                 let rec collectStringLiteral' (ret: Char list, s: Char list): Char list * Char list =
