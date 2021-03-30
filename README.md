@@ -1,5 +1,3 @@
-tags: #github  #readme 
-
 # lerve
 Simple [Scheme-like Lisp](https://fr.wikipedia.org/wiki/Scheme) interpreter web API, written in F# .NET Core.
 
