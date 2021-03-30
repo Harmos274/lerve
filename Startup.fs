@@ -23,7 +23,11 @@ type Startup(configuration: IConfiguration) =
             .AddControllers()
             .AddJsonOptions(fun options ->
                 options.JsonSerializerOptions.Converters.Add
-                    (JsonFSharpConverter(unionTagName = "type", unionFieldsName = "values")))
+                    (JsonFSharpConverter(unionEncoding = (JsonUnionEncoding.AdjacentTag ||| JsonUnionEncoding.UnwrapSingleFieldCases),
+                                         unionTagName = "type",
+                                         unionFieldsName = "values")
+                    )
+            )
         |> ignore
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
