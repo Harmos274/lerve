@@ -1,5 +1,6 @@
-﻿namespace lerve.Services.LispService
+﻿namespace lerve.Services.LispService.ParserDomain
 
+open lerve.Services.LispService.LexerDomain
 open lerve.Services.CommonService.Tuple
 
 type public Expression =
@@ -47,6 +48,6 @@ module Parser =
         try
             Ok <| parse tokens
         with
-        | ParserException cause -> Error <| "Parser Exception: " + cause
+        | ParserException cause -> Error $"Parser Exception: {cause}"
         | _                     -> Error "Internal Error"
         

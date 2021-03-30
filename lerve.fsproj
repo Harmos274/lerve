@@ -10,8 +10,13 @@
         <Compile Include="Services\CommonService\Tuple.fs" />
         <Compile Include="Services\CommonService\List.fs" />
         <Compile Include="Services\CommonService\Result.fs" />
+        <Compile Include="Services\CommonService\Converter.fs" />
         <Compile Include="Services\LispService\Lexer.fs" />
         <Compile Include="Services\LispService\Parser.fs" />
+        <Compile Include="Services\LispService\EvaluatorDomain\EvaluatorDomainTypes.fs" />
+        <Compile Include="Services\LispService\EvaluatorDomain\ExpressionEvaluator.fs" />
+        <Compile Include="Services\LispService\EvaluatorDomain\Builtins.fs" />
+        <Compile Include="Services\LispService\EvaluatorDomain\Evaluator.fs" />
         <Compile Include="Controllers\CodeController.fs" />
         <Compile Include="Startup.fs" />
         <Compile Include="Program.fs" />

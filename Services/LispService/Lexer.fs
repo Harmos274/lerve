@@ -1,4 +1,4 @@
-﻿namespace lerve.Services.LispService
+﻿namespace lerve.Services.LispService.LexerDomain
 
 open System
 open lerve.Services.CommonService.List
@@ -65,5 +65,5 @@ module Lexer =
         try
             Ok <| (lex << Seq.toList) s
         with
-        | LexerException cause -> Error <| "Lexer Exception: " + cause
+        | LexerException cause -> Error $"Lexer Exception: {cause}"
         | _                    -> Error "Internal Error"
